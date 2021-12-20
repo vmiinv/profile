@@ -15,9 +15,6 @@ public class ProfileService {
 
 
     public Optional<Profile> getProfile(Long id) {
-
-
-
         return  profileRepository.findById(id);
     }
 }

@@ -23,5 +23,10 @@ public class ProfileController {
         return profileService.getProfile(id);
     }
 
-
+    @GetMapping("/email/{userId}")
+    public String getEmail(@PathVariable("userId") Long id) {
+        Profile profile = new Profile();
+        profile.setEmail("ali.k@tunelab.net");
+        return profileService.getProfile(id).orElse(profile).getEmail();
+    }
 }
